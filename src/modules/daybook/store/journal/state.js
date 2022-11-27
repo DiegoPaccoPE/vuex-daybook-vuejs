@@ -20,13 +20,13 @@ export default () => ({
     {
       id: new Date().getTime() + 2000,
       date: new Date().toDateString(),
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolorem excepturi? Tempore, asperiores debitis cupiditate consequuntur eius deserunt, provident totam numquam nobis nesciunt necessitatibus. Totam porro veniam unde veritatis repellat?',
+      text: 'Diego Paccotaype Hinostroza jugando en la computadora',
       picture: null
     },
     {
       id: new Date().getTime() + 3000,
       date: new Date().toDateString(),
-      text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, dolorem excepturi? Tempore, asperiores debitis cupiditate consequuntur eius deserunt, provident totam numquam nobis nesciunt necessitatibus. Totam porro veniam unde veritatis repellat?',
+      text: 'Este es un ejemplo de texto que podria estár en este bloque',
       picture: null
     }
   ]
