@@ -1,0 +1,21 @@
+<template>
+  <div class="d-flex justify-content-center">
+    <h2 class="align-self-center">No hay nada seleccionado</h2>
+  </div>
+  <FabIcon />
+</template>
+
+<script>
+import { defineAsyncComponent } from "vue";
+
+export default {
+  components: {
+    FabIcon: defineAsyncComponent(() => import("../components/FabIcon.vue")),
+  },
+};
+</script>
+<style lang="scss" scoped>
+div {
+  height: 100%;
+}
+</style>
