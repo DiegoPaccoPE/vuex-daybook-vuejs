@@ -38,7 +38,6 @@ export default {
     },
     created() {
       this.loadEntries()
-      console.log(this.isLoading)
     },
 }
 </script>

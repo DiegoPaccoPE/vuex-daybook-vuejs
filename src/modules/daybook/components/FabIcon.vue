@@ -1,5 +1,5 @@
 <template>
-  <button class="btn btn-primary">
+  <button class="btn btn-primary" @click="handleClick">
     <i class="fa fa-2x" :class="icon"></i>
   </button>
 </template>
@@ -11,6 +11,11 @@ export default {
       type: String,
       default: "fa-plus",
     },
+  },
+  methods: {
+    handleClick(){
+      this.$emit('on:click')
+    }
   },
 };
 </script>
