@@ -4,9 +4,11 @@
 
 
 
-export const setEntry = (/* state */ ) => {
-
+export const setEntry = ( state, entries ) => {
+  state.entryList = [...entries];
+  state.isLoading = false;
 }
+
 export const updateEntry = (/* state */ ) => {
 
 }
