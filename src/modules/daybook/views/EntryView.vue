@@ -7,7 +7,7 @@
         <span class="mx-2 fs-4 fw-light">{{yearDay}}</span>
       </div>
       <div>
-        <button class="btn btn-danger mx-2">
+        <button v-if="this.entry.id" class="btn btn-danger mx-2" @click="removeEntry">
           Borrar
           <i class="fa fa-trash-alt"></i>
         </button>
@@ -72,14 +72,30 @@ export default {
     }
   },
   methods: {
-    ...mapActions('journal', ['updateEntry']),
+    ...mapActions('journal', ['updateEntry', 'createEntry', 'deleteEntry']),
     loadEntry(){
-      const entry = this.entrySelected(this.id);
-      if(!entry) return this.$router.push({name: 'no-entry'});
+      let entry;
+      if(this.id === 'new'){
+        entry = {}
+        entry.date = new Date().toDateString();
+        entry.text = ''
+      } else {
+        entry = this.entrySelected(this.id);
+        if(!entry) return this.$router.push({name: 'no-entry'});
+      }
       this.entry = entry
     },
-    saveEntry(){
-      this.updateEntry(this.entry)
+    async saveEntry(){
+      if(this.entry.id){
+        await this.updateEntry(this.entry)
+      } else {
+        const newId = await this.createEntry(this.entry)
+        this.$router.push({name: 'entry', params: {id: newId}})
+      }
+    },
+    async removeEntry(){
+      await this.deleteEntry(this.entry.id)
+      this.$router.push({name: 'no-entry'})
     }
   },
   created(){

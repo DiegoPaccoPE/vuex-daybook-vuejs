@@ -2,7 +2,7 @@
   <div class="d-flex justify-content-center">
     <h2 class="align-self-center">No hay nada seleccionado</h2>
   </div>
-  <FabIcon />
+  <FabIcon @on:click="$router.push({name: 'entry', params: {id: 'new'}})"/>
 </template>
 
 <script>
